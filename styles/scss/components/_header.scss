@@ -8,7 +8,14 @@ body {
 header {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(1, 62, 141);
+
+  #wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 
   .container {
     @include mix-d-flex (row, space-between);
@@ -16,13 +23,6 @@ header {
     margin-inline: auto;
     padding-block: 2rem;
     padding-bottom: 8rem;
-
-    #wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
   }
 
   .branding {
