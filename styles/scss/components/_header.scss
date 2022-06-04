@@ -1,0 +1,44 @@
+@use '../mixins' as *;
+@use '../colors' as *;
+
+header {
+  width: 100%;
+  background-color: $clr-night;
+
+  .container {
+    @include mix-d-flex (row, space-between);
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    padding-block: 2rem;
+    padding-bottom: 5rem;
+  }
+
+  .branding {
+    @include mix-d-flex ();
+    gap: 1rem;
+    width: max-content;
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $clr-primary;
+    }
+  }
+
+  nav {
+    margin-left: auto;
+    margin-right: 3rem;
+
+    .navList {
+      @include mix-d-flex ();
+      gap: 3rem;
+
+      &__link {
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $clr-primary;
+      }
+    }
+  }
+}
