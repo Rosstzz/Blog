@@ -1,16 +1,28 @@
 @use '../mixins' as *;
 @use '../colors' as *;
 
-header {
-  width: 100%;
+body {
   background-color: $clr-night;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
 
   .container {
     @include mix-d-flex (row, space-between);
     width: min(1200px, 100%);
     margin-inline: auto;
     padding-block: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
+
+    #wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
   }
 
   .branding {
@@ -19,7 +31,7 @@ header {
     width: max-content;
 
     &__title {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 600;
       color: $clr-primary;
     }
