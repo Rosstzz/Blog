@@ -7,6 +7,7 @@ body {
 
 header {
   position: relative;
+  isolation: isolate;
   width: 100%;
   background-color: rgb(1, 62, 141);
 
@@ -15,6 +16,11 @@ header {
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: -111;
+  }
+
+  #toggler {
+    cursor: pointer;
   }
 
   .container {
@@ -31,6 +37,7 @@ header {
     width: max-content;
 
     &__title {
+      cursor: pointer;
       font-size: 3rem;
       font-weight: 600;
       color: $clr-primary;
@@ -46,10 +53,35 @@ header {
       gap: 3rem;
 
       &__link {
+        position: relative;
         cursor: pointer;
+        overflow: hidden;
         font-size: 1.5rem;
         font-weight: 600;
+        transition: all 200ms ease-out;
         color: $clr-primary;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 140%;
+          transform: translate(-50%, -50%);
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          transition: all 200ms ease-out;
+          background-color: yellow;
+          box-shadow: 0px 0px 5px 5px $clr-primary;
+        }
+
+        &:hover {
+          color: rgb(255, 219, 17);
+        }
+        &:hover::before {
+          transform: translate(-130%, -50%);
+          left: -2rem;
+        }
       }
     }
   }

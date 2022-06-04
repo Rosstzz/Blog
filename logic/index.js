@@ -47,6 +47,23 @@ function waveAnimation(target, path1, path2, path3, path4) {
   return wave;
 }
 
+const title = 'blogger';
+const title_splited = title.split('');
+
+function createSpanElem(text, target = '') {
+  const span = document.createElement('span');
+  if (text === target) {
+    span.className = 'targetLetter';
+  }
+  span.append(text);
+  return span;
+}
+
+for (const item of title_splited) {
+  const singleSetter = createSpanElem(item, 'g');
+  brand_title.append(singleSetter);
+}
+
 
 
 
