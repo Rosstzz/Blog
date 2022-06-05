@@ -1,0 +1,41 @@
+@use '../mixins' as *;
+@use '../colors' as *;
+
+.section-1 {
+  width: 100%;
+  background-color: blueviolet;
+
+  .container {
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    padding: 1rem;
+    background-color: cornflowerblue;
+  }
+
+  .postList {
+    @include mix-d-flex (row, space-evenly);
+  }
+
+  .post {
+    width: 25rem;
+    height: 35rem;
+    background-color: crimson;
+
+    &__img {
+      position: relative;
+      height: 50%;
+      overflow: hidden;
+      background-color: springgreen;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+  }
+}
