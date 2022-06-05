@@ -32,7 +32,7 @@ waveAnimation('#wave__target_1_2', wavePath_2_2, wavePath_3_2, wavePath_4_2, wav
 waveAnimation('#wave__target_1_3', wavePath_2_3, wavePath_3_3, wavePath_4_3, wavePath_4_3);
 
 function waveAnimation(target, path1, path2, path3, path4) {
-  const wave = anime({
+  anime({
     targets: target,
     d: [
       {value: path1},
@@ -45,7 +45,6 @@ function waveAnimation(target, path1, path2, path3, path4) {
     direction: 'alternate',
     loop: true
   });
-  return wave;
 }
 
 /* theme toggler animation */
@@ -56,7 +55,7 @@ themeToggler.addEventListener('click', themeTogglerAnimation);
 
 let reverseFlag = false;
 function themeTogglerAnimation() {
-  const toggler = anime({
+  anime({
     targets: '#toggler__target',
     d: [
       {value: reverseFlag ? sunPath : moonPath}
@@ -99,6 +98,42 @@ function brandTitleAnimation() {
     delay: anime.stagger(100),
     easing: 'easeOutQuint'
   });
+}
+
+/* Theme changing animation */
+themeToggler.addEventListener('click', themeChangingAnimation);
+
+function themeChangingAnimation() {
+  const currentMode = this.getAttribute('data-mode');
+  if (currentMode === 'sun') {
+    applyLightTheme();
+    this.setAttribute('data-mode', 'moon');
+  }
+  else {
+    applyDarkTheme();
+    this.setAttribute('data-mode', 'sun');
+  }
+}
+
+function toggleMode(wave, color) {
+  anime({
+    targets: wave,
+    fill: color,
+    duration: 2000,
+    easing: 'easeInOutSine'
+  });
+}
+
+function applyLightTheme() {
+  toggleMode('#wave__target_1_1', '#0077ff');
+  toggleMode('#wave__target_1_2', '#1164ff');
+  toggleMode('#wave__target_1_3', '#0a57ff');
+}
+
+function applyDarkTheme() {
+  toggleMode('#wave__target_1_1', '#0E1E3A');
+  toggleMode('#wave__target_1_2', '#06182E');
+  toggleMode('#wave__target_1_3', '#001122');
 }
 
 
