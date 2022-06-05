@@ -21,6 +21,10 @@ header {
 
   #toggler {
     cursor: pointer;
+
+    #toggler__target {
+      transform-origin: center;
+    }
   }
 
   .container {
