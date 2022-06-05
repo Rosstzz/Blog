@@ -89,10 +89,16 @@ for (const item of title_splited) {
 }
 
 function brandTitleAnimation() {
-  /* const targets = brand_title.querySelectorAll('.targetLetter');
-  const tl = gsap.timeline({repeat: 1, stagger: 0.2});
-  tl.to(`.${brand_title.querySelectorAll('.targetLetter')[0].className}`, {color: 'yellow', duration: .2});
-  tl.to(`.${brand_title.querySelectorAll('.targetLetter')[0].className}`, {color: 'orangered', duration: .2}); */
+  anime({
+    targets: '.targetLetter',
+    color: [
+      {value: '#ffdb11'},
+      {value: '#ff4500'}
+    ],
+    duration: 200,
+    delay: anime.stagger(100),
+    easing: 'easeOutQuint'
+  });
 }
 
 
