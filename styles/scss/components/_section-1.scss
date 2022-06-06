@@ -17,12 +17,16 @@
   }
 
   .post {
+    @include mix-d-flex (column, space-between);
     width: 25rem;
     height: 35rem;
-    background-color: crimson;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #fff;
 
     &__img {
       position: relative;
+      width: 100%;
       height: 50%;
       overflow: hidden;
       background-color: springgreen;
@@ -35,6 +39,36 @@
         height: 100%;
         object-fit: cover;
         object-position: bottom;
+      }
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    &__description {
+      padding-inline: 1rem;
+      text-align: center;
+      opacity: .8;
+      font-size: 1.3rem
+    }
+
+    &__footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      padding: 1rem;
+      background-color: crimson;
+
+      &-box {
+        @include mix-d-flex (column);
+        gap: .5rem;
+        color: #fff;
+
+        & p:first-child {
+          font-weight: 600;
+        }
       }
     }
   }
