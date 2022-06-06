@@ -119,6 +119,7 @@ function toggleMode(wave, color) {
   anime({
     targets: wave,
     fill: color,
+    background: color,
     duration: 2000,
     easing: 'easeInOutSine'
   });
@@ -128,12 +129,14 @@ function applyLightTheme() {
   toggleMode('#wave__target_1_1', '#0077ff');
   toggleMode('#wave__target_1_2', '#1164ff');
   toggleMode('#wave__target_1_3', '#0a57ff');
+  toggleMode('body', '#184eff');
 }
 
 function applyDarkTheme() {
   toggleMode('#wave__target_1_1', '#0E1E3A');
   toggleMode('#wave__target_1_2', '#06182E');
   toggleMode('#wave__target_1_3', '#001122');
+  toggleMode('body', '#000d19');
 }
 
 
